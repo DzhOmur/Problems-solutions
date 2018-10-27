@@ -92,4 +92,3 @@ int main()
 	
 	cout << ans << endl;
 }
-close
