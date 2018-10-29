@@ -1,3 +1,8 @@
+/**
+	If doge's power is P and standing point is V, we can jump to all V - k * P >= 0 and V + k * P < n.
+	let's denote TO, the points in which we can jump. 
+	If our power is P and point TO also have power P. It isn't necessary to consider other points which come after TO.
+**/
 #include <bits/stdc++.h>
  
 #define mk make_pair
