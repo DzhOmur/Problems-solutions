@@ -1,3 +1,7 @@
+/**
+	It's guaranteed that, there is ar[i][i] = 1. Then for positive answer, it's enought that our graph is connected.
+**/
+
 #include <bits/stdc++.h>
  
 using namespace std;
