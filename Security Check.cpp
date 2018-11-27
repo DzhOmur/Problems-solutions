@@ -6,7 +6,7 @@
     
    k <= 10, So if we are considering dp[i][1..n], all dp[i][j] is equal to dp[i-1][j-1] + 1, except of maximum 2*k elements.
    We just compute all DP, like dp[i][j] = dp[i - 1][j - 1] + 1, 
-   and for every layer of dp --> such as 1<=i<=n, we compute with brute force to 2*k elements, which abs(a[i] - b[j]) <= k. 
+   and for every layer of dp --> such as 1<=i<=n, we compute, like dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + 1, with brute force to 2*k elements, which abs(a[i] - b[j]) <= k. 
 **/
 
 #include <bits/stdc++.h>
