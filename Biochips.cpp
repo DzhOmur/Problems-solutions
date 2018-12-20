@@ -12,7 +12,7 @@ const int N = 2e5 + 5;
 
 int n, m, x, y, root, a[N];
 
-int dp[N][505], tin[N], tiktak, inf = 1e9 + 7, tout[N];
+int dp[N][505], tin[N], tiktak, inf = 1e9 + 7;
 
 vector < vector <int> > g;
 
@@ -20,13 +20,18 @@ vector < pair <int, int> > vec;
 
 void dfs (int v)
 {
-	tin[v] = ++tiktak;
+	if (g[v].empty() )
+		tin[v] = ++tiktak;
 		
-	for (auto to : g[v])
+	for (auto to : g[v]){
 		dfs(to);
-	tout[v] = tiktak;
-	
-	vec.pb( mk( tout[v], v ) );
+		
+		if (!tin[v])
+			tin[v] = tin[to];
+		else
+			tin[v] = min( tin[v], tin[to] ); 
+	}
+	vec.pb( mk( tiktak, v ) );
 }
 
 main() 
@@ -61,4 +66,3 @@ main()
 	}
 	cout << dp[vec.back().fr][m] << endl;
 }
-
