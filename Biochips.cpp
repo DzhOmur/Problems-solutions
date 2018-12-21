@@ -1,3 +1,11 @@
+/**
+	If we would do simple dp, 
+	like dp[i][j] - max sum of j numbers that we picked from the first i numbers, and dp[i][j] = max(dp[i-1][j], dp[i-1][j-1]+a[i]).
+	In this dp we can count such pairs, where one of them is the ancestor of the other.
+	But if we will do topological sort and sort vertices with their tout.
+	In this order we can compute dp, like dp[ tout[i] ][j] = max( dp[ tout[i]-1 ][j], dp[ tin[i]-1 ][j-1]+a[i] ).
+	Now we don't count such pairs, where one of them is the ancestor of the other.
+**/
 #include <bits/stdc++.h>
 
 #define fr first
